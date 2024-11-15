@@ -1,0 +1,28 @@
+body{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin: 0;
+    background-color: #1A2534;
+}
+
+header{
+    margin: 0;
+    background-color: #293344;
+    height: 10vh;
+}
+
+main{
+    margin: 0;
+}
+
+section{
+    height: 100%;
+
+}
+
+.main_container{
+    margin: auto;
+    width: 100%;
+    
+}
