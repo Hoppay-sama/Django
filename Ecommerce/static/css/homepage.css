@@ -3,6 +3,8 @@
     background-color:black;
     min-height: 90vh; 
     min-width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
 
     .main_container{
         /* border: solid 1px white; */
@@ -214,7 +216,8 @@
     /* background-color: black; */
     background-image:linear-gradient(to bottom, #000000 0%, #263041 98%, #252C3B 99%, #1A2534 100% );
     max-width: 100vw;
-    min-height: 100vh; 
+    min-height: 100vh;
+    overflow-x: hidden; 
 
     .main_container{
         display: flex;
@@ -395,3 +398,61 @@
 
 }
 
+#About{
+    background-color: #1A2534;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden; 
+
+    .main_container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 100vh;
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+
+            #content{
+                justify-content: center;
+                align-items: center;
+            }
+
+            
+        }
+
+        #container > h1{
+            color: white;
+            /* font-family: 'Poppins' sans-serif; */
+            font-size: 3vw;
+        }
+
+        .slider_button{
+
+            button{
+                background-color: transparent;
+                border: none;
+                height: 50vh;
+                width: 100%;
+                font-size: 15vw;
+                
+            }
+        }
+
+        #text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            width: 60%;
+            gap: 5vh
+        }
+    }
+}
+ 

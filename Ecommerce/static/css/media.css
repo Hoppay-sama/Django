@@ -26,7 +26,7 @@ h2, p{
 
 header{
     /* border: solid 1px pink; */
-    background-color: #293344;
+    background-image: linear-gradient(to top, #000000 0%, #263041 98%, #252C3B 99%, #1A2534 100% );
     height: 10vh;
 }
 
