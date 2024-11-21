@@ -433,14 +433,23 @@
         }
 
         .slider_button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             button{
                 background-color: transparent;
                 border: none;
-                height: 50vh;
+                height: 40vh;
                 width: 100%;
-                font-size: 15vw;
-                
+                font-size: 5vw;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            button:hover{
+                background-color: #ffffff31;
+                color: #1A2534;
+                cursor: pointer;
             }
         }
 
