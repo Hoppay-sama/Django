@@ -9,7 +9,9 @@
 
 {%block Body%}
 <section class="album">
-    <audio  id="myAudio" src="{%static 'others/album.M4A'%}" autoplay loop></audio>
+    <audio  id="myAudio" autoplay loop>
+        <source  src="{% static 'others/album.m4a' %}" type="audio/mpeg">
+    </audio>
     <div class="main_container">
         <div id="paper">
             {% for image in Images %}

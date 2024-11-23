@@ -9,7 +9,9 @@
 
 {%block Body%}
 <section class="home">
-    <audio  id="myAudio" src="{%static 'others/home.M4A'%}" autoplay loop></audio>
+    <audio  id="myAudio" autoplay loop>
+        <source src="{% static 'others/home.m4a' %}" type="audio/mpeg">
+    </audio>
     <div class="main_container">
         <a title="Open Gallery" href="{% url 'Album:album' %}" class="entry" aria-disabled="true">
             <div class="entry_container">
