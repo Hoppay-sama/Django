@@ -1,0 +1,38 @@
+{%extends 'main.html'%}     
+{% load static %}
+
+{%block Title%} Album {%endblock%}
+
+{%block Head%}
+<link rel="stylesheet" href="{%static 'Styles/album.css'%}">
+{%endblock%}
+
+{%block Body%}
+<section class="album">
+    <audio  id="myAudio" src="{%static 'others/album.M4A'%}" autoplay loop></audio>
+    <div class="main_container">
+        <div id="paper">
+            {% for image in Images %}
+            <a href="{% url 'Album:card' title=image.title %}">
+                <div class="card">
+                    <img 
+                        class="image_card" 
+                        src="{{image.image.url}}" 
+                        alt="{{image.title}}"
+                    />
+                    <h1>{{image.title}}</h1>
+                    <p>{{image.date}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="banner_button">
+
+    </div>
+</section>
+{%endblock%}
+
+{%block Script%}
+<!-- <script src="{%static 'js/gallery.js'%}"></script> -->
+{%endblock%}

@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url('../../static/Images/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.album{
+    overflow: hidden;
+    
+    .main_container{
+        background-color: rgb(215, 202, 184);
+        border: solid 5px black;
+        box-shadow: 0 0 4px 8px #3a6453;
+        height: 75vh;
+        width: 80vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        overflow-x: scroll;
+
+        #paper{
+            display: flex;
+            align-items: center;
+            
+            a{
+                text-decoration: none;
+                color: black;
+            }
+
+
+            .card{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+                /* background-color: #3a6453; */
+                height: 70vh;
+                width:30vw;
+
+                img{
+                    width: 80%;
+                    border: 1px solid black;
+                }
+
+            }
+        }
+        
+    }
+}
