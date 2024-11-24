@@ -97,6 +97,19 @@
 
 @media (max-width: 768px) {
 
+    header{
+
+        .icons { 
+            a::after{
+                content:none
+            }
+        }
+
+        .icons:hover{
+            color: #be8b3e;
+        }
+    }
+
     #hero .main_container {
         article{
             #image_container {

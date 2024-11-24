@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Inter  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Roboto  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Font Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=horizontal_rule" />
+    <!-- External CSS  -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css%}">
+
+</head>
+<body>
+    <!-- Shipping Content -->
+    <section class="shipping-content">
+        <div class="column-shipping">
+            <div>
+                <div class="horizontal-container">
+                    <p>Cart</p>
+                    <span class="material-symbols-outlined" style="color: #3182CE;">horizontal_rule</span>
+                    <span><i class="fa-solid fa-circle-check" style="color: #000000;"></i></span>
+                    <span class="material-symbols-outlined" style="color: #3182CE;">horizontal_rule</span>
+                    <p>Shipping</p>
+                    <span class="material-symbols-outlined" style="color: #3182CE;">horizontal_rule</span>
+                    <span><i class="fa-solid fa-circle-check" style="color: #000000;"></i></span>
+                    <span class="material-symbols-outlined" style="color: #3182CE;">horizontal_rule</span>
+                    <p>Payment</p>
+                </div>
+
+
+                <h2 id="payment-details">Payment Details</h2>
+                <div class="form-group">
+                    <div class="form-group payment-method">
+                        <label for="payment-method">Payment Method</label>
+                        <select id="payment-method">
+                            <option value="123, Example">COD</option>
+                            <!-- Add nalang d2 ang options   -->
+                        </select>
+                    </div>              
+                    <div class="form-group name-on-card">
+                        <label for="name-on-card">Name on card</label>
+                        <div class="input-container">
+                            <input title="form" type="text" id="first-line" value="123">
+                        </div>
+                    </div>
+                    <div class="form-group card-number">
+                        <label for="card-number">Card number</label>
+                        <div class="input-container">
+                            <input type="text" id="card-number" value="Example">
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group expiration">
+                            <label for="expiration">Expiration</label>
+                            <input type="text" id="expiration" value="MM/DD/YYYY">
+                        </div>
+                        <div class="form-group cvc">
+                            <label for="shipping">CVC</label>
+                            <input title="form" type="text" id="cvc" value="1234">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="horizontal-container-buttons">
+                    <h1 id="cancel-order">Cancel Order</h1>
+                    <span id="complete-order">Complete Order</span>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="column-order_summary">
+            <div class="order-container">
+                
+                <div class="order-summary">
+                    <h2 id="order-summary-txt">Order Summary</h2>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Myphone Janjalani</h1>
+                            <p>Model: <span>Janjalani</span></p>
+                            <p>Color: <span>White</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quality" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Myphone Pro</h1>
+                            <p>Model: <span>Pro</span></p>
+                            <p>Color: <span>Red</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quality" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Iphone Pro Max 15</h1>
+                            <p>Model: <span>Pro Max 15</span></p>
+                            <p>Color: <span>Black</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quantity" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                <div class="order-total">
+                    <p>Total:</p>
+                    <span>₱3703.70</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

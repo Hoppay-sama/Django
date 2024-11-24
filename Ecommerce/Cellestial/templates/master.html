@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Actor&family=Inika:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Khand:wght@300;400;500;600;700&family=Marcellus+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+
     <base href="../../static/">
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet", type="text/css", href="css/media.css">
@@ -16,9 +17,37 @@
     
     {%endblock%}
 </head>
+
 <body>
     <header>
-        <h1>I Identify as a Navigation Bar</h1>
+        <div class="logo-container">
+            <img src="LOGO.png" alt="Cellestial" class="logo-img" />
+            <a class="logo-text">Cellestial</a>
+        </div>
+    
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search..." />
+            <i class="bx bx-search"></i>
+    
+            <div class="search-dropdown">
+              <a href="/shop">Shop</a>
+              <a href="/on-sale">On Sale</a>
+              <a href="/new-arrivals">New Arrivals</a>
+              <a href="/brands">Brands</a>
+            </div>
+        </div>
+    
+    
+          <input aria-label="bx bx-menu" type="checkbox" name="" id="toggler" />
+    
+    
+        <div class="icons">
+            <a title="Wishlist" href="/#">
+                <i class="bx bxs-heart"></i> 
+            </a>
+            <a title="Add to Cart" href="/#"><i class="bx bxs-cart"></i></a>
+            <a title="User" href="/#"><i class="bx bxs-user"></i></a>
+        </div>
     </header>
     <main>
         {%block content%}
