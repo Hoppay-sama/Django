@@ -1,0 +1,104 @@
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+    Products
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+{%endblock%}
+
+{% block content %}
+    <!-- Mobile Picks Section -->
+    <section class="mobile-picks">
+        <h2>Sparkling savings that'll have you smiling</h2>
+        <div class="categories">
+            <a id="for-you">For You</a>
+            <a id="hot-deals">Hot Deals</a>
+            <a id="brand-new">Brand New</a>
+            <a id="discounts">Discounts</a>
+        </div>
+        <div class="main-content">
+            <div id="for-you-content" >
+                <div class="product-grid">
+                    {% for product in products %}
+                        {% if product.category.name == 'For You' %}
+                            <div class="product">
+                                <img src="{{ product.image.url }}"  alt="Product 1">
+                                <p class="deal">{{product.name}}</p>
+                                <p class="product-price">₱{{product.price}}</p>
+                                <a href="buynow.html">
+                                    <button>BUY NOW</button>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <div id="hot-deals-content" hidden>
+                <div class="product-grid">
+                    {% for product in products %}
+                        {% if product.category.name == 'Hot Deals' %}
+                    <div class="product">
+                        <img src="{{ product.image.url }}"  alt="Product 1">
+                        <p class="deal">{{product.name}}</p>
+                        <p class="product-price">₱{{product.price}}</p>
+                        <a href="buynow.html">
+                            <button>BUY NOW</button>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <div id="brand-new-content" hidden>
+                <div class="product-grid">
+                    {% for product in products %}
+                        {% if product.category.name == 'Brand New' %}
+                    <div class="product">
+                        <img src="{{ product.image.url }}"  alt="Product 1">
+                        <p class="deal">{{product.name}}</p>
+                        <p class="product-price">₱{{product.price}}</p>
+                        <a href="buynow.html">
+                            <button>BUY NOW</button>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>    
+    
+            <div id="discounts-content" hidden >
+                <div class="product-grid">
+                    {% for product in products %}
+                        {% if product.category.name == 'Discounts' %}
+                    <div class="product">
+                        <img src="{{ product.image.url }}"  alt="Product 1">
+                        <p class="deal">{{product.name}}</p>
+                        <p class="product-price">
+                            <strike>₱{{product.price}}</strike>
+                            &nbsp;
+                            ₱{{product.sale_price}}
+                        </p>
+                        
+                        <a href="buynow.html">
+                            <button>BUY NOW</button>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{%endblock%}
+
+{% block script %}
+    <script src="{% static 'js/shop.js' %}"></script>
+{% endblock %}
+
+

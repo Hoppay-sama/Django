@@ -1,0 +1,41 @@
+try.html renamed to product_page.html
+converted product_page.html to django format
+created product_page.css
+created product_page.js
+created product_page() in views
+modified views and urls
+
+updated payment.html
+added payment() in views
+
+
+
+TODO:
+link contact and about sa footer
+contact aayusin
+rework Login / Register (scrap models + remove custom authentication)
+ayusin content footer, tanggalin d needed
+ayusin responsiveness (latter)
+ayusin comments (latter)
+
+
+
+Need to report:
+- about Us
+- contact Us
+- product page (DONE!!!)
+- login/create acc (incomplete / partial)
+- payment page
+- add to cart
+
+- ayusin ppt xD 
+
+links:
+(login / register + product details)
+- https://drive.google.com/drive/folders/1mVGQbrLjVdcy883_31dsFMjs5HHuEbfx?fbclid=IwZXh0bgNhZW0CMTAAAR2f5jp0PwNX6586713TdMkfQKp76Cbv1XoIRr5TTPX35I-27aI_RLttbPg_aem_GmGSfN8PhAQGaSnlUI9m3A
+
+(cart)
+- https://drive.google.com/drive/folders/1yYwSVzodJ5q0m-tKkVDRGxYRwsNDHjTK
+
+(Product page)
+-

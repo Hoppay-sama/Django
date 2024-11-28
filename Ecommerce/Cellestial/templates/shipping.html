@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    {% load static %}
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shipping.css' %}">
+</head>
+
+<body>
+    <!-- Shipping Content -->
+    <section class="shipping-content">
+        <div class="column-shipping">
+            <div>
+                <div class="horizontal-container">
+                    <p>Cart</p>
+                    <span class="material-icons-outlined">horizontal_rule</span>
+                    <span><i class="fas fa-circle-check"></i></span>
+                    <span class="material-icons-outlined">horizontal_rule</span>
+                    <p>Shipping</p>
+                    <span class="material-icons-outlined">horizontal_rule</span>
+                    <span><i class="fas fa-circle-check"></i></span>
+                    <span class="material-icons-outlined">horizontal_rule</span>
+                    <p>Payment</p>
+                </div>
+                <h2 id="shipping-details">Shipping Details</h2>
+                <div class="form-group">
+                    <div class="form-group saved-address">
+                        <label for="saved-address">Use saved address</label>
+                        <select id="saved-address">
+                            <option value="123, Example">123, Example</option>
+                            <!-- Add nalang d2 ang options   -->
+                        </select>
+                    </div>              
+                    <div class="form-group fl-address">
+                        <label for="first-line">First line of address</label>
+                        <div class="input-container">
+                            <input type="text" id="first-line" value="123">
+                        </div>
+                    </div>
+                    <div class="form-group street">
+                        <label for="street-name">Street name</label>
+                        <div class="input-container">
+                            <input type="text" id="street-name" value="Example">
+                        </div>
+                    </div>
+                    <div class="horizontal-group">
+                        <div class="form-group postcode">
+                            <label for="postcode">Postcode</label>
+                            <input type="text" id="postcode" value="ABC - 123">
+                        </div>
+                        <div class="form-group select-shipping">
+                            <label for="shipping">Select shipping</label>
+                            <select id="shipping">
+                                <option value="COD">COD</option>
+                                <!-- Add more options if pde -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="horizontal-container-buttons">
+                    <h1 id="cancel-order">Cancel Order</h1>
+                    <span id="payment">Payment</span>
+                </div>
+                
+            </div>
+
+        </div>
+        <div class="column-order_summary">
+            <div class="order-container">
+                
+                <div class="order-summary">
+                    <h2 id="order-summary-txt">Order Summary</h2>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Myphone Janjalani</h1>
+                            <p>Model: <span>Janjalani</span></p>
+                            <p>Color: <span>White</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quantity" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Myphone Pro</h1>
+                            <p>Model: <span>Pro</span></p>
+                            <p>Color: <span>Red</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quantity" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                    <div class="order-item">
+                        <img src="https://via.placeholder.com/60" alt="Myphone Pro">
+                        <div class="order-item-details">
+                            <h1>Iphone Pro Max 15</h1>
+                            <p>Model: <span>Pro Max 15</span></p>
+                            <p>Color: <span>Black</span></p>
+                            <div class="order-item-price">₱1234.567</div> <!-- Moved price inside order-item-details -->
+                        </div>
+                        <div class="quantity-container"> 
+                            <button type="button">-</button> 
+                            <input title="quantity" type="text" value="1" readonly> 
+                            <button type="button">+</button> 
+                        </div>
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                <div class="order-total">
+                    <p>Total:</p>
+                    <span>₱3703.70</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- cedrick pede mo icheck yung html mo sa server, nilink ko sa dropdown menu pag hinover mo sa searchbar ng navbar -->

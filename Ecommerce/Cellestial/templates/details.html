@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="title-container">
+                <h1 class="title">Buy PhoenixRise Zero</h1>
+                <p class="subtitle">from ₱37,499 to ₱1,562.42/mo for 24 months</p>
+            </div>
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img src="{% static 'images/phone-4.png' %}" alt="Main Image" id="mainImage">
+                </div>
+            </div>
+
+            <div class="horizontal-images">
+                <img src="{% static 'images/phone-1.png' %}" alt="Horizontal Phone 1" class="phones" onmouseover="changeImage(this)"> 
+                <img src="{% static 'images/phone-2.png' %}" alt="Horizontal Phone 2" class="phones" onmouseover="changeImage(this)">
+                <img src="{% static 'images/phone-3.png' %}" alt="Horizontal Phone 3" class="phones" onmouseover="changeImage(this)">
+            </div>
+
+
+            <div class="options-section">
+                <h2>Color</h2>
+                <div class="colors" id="colorOptions">
+                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
+                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
+                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
+                </div>
+            </div>            
+        </div>
+
+        <div class="product-details">
+            <div class="button">Get 3% Daily Cashback with Interstellar Pass</div>
+
+            <div class="options-section">
+                <h2>Find the Model That Suits Your Style</h2>
+                <div class="model-options" id="modelOptions">
+                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                        <div class="details">
+                            <strong>PhoenixRise Zero</strong>
+                            <span>6 inch display</span>
+                        </div>
+                        <span>From ₱37,499 <br> or ₱1,562.42/mo <br> for 24 months</span>
+                    </div>
+                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                        <div class="details" >
+                            <strong>PhoenixRise</strong>
+                            <span>6 inch display</span>
+                        </div>
+                        <span>From ₱41,999 <br> or ₱1,729.12/mo <br> for 24 months</span>
+                    </div>
+                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                        <div class="details">
+                            <strong>Prestige PhoenixRise</strong>
+                            <span>6.9 inch display</span>
+                        </div>
+                        <span>From ₱59,999 <br> or ₱2,500/mo for <br> 24 months</span>
+                    </div>
+                </div>
+
+                <div class="options-section storage-options">
+                <h2>Storage Options</h2>
+                <div class="model-options" id="storageOptions">
+                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                        <div class="details " >
+                            <strong>256 GB</strong>
+                        </div>
+                        <span>From ₱37, 499 <br> or ₱1,562.42/mo <br> for 24 months</span>
+                    </div>
+                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                        <div class="details">
+                            <strong>512 GB</strong>
+                        </div>
+                        <span>From ₱41, 499 <br> or ₱1,729.12/mo <br> for 24 months</span>
+                    </div>
+                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                        <div class="details " >
+                            <strong>1 TB</strong>
+                        </div>
+                        <span>From ₱59, 999 <br> or ₱2,500/mo for <br> 24 months</span>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+
+    <section class="trade-in-section">
+        <h2>Celestial Trade-in</h2>
+        <p>Celestial Trade-in value up to ₱12,900</p>
+        <div class="trade-in-buttons" id="tradeOptions">
+            <div class="yes option" onclick="selectOption('tradeOptions', this)">
+                <h3>Yes, Trade-in</h3>
+            </div>
+            <div class="no option" onclick="selectOption('tradeOptions', this)">
+                <h3>No</h3>
+                <p>Get $500 Cellestial Instant Savings</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="payment-options">
+        <h2>Choose your Payment option</h2>
+        <div class="options-container" id="onetimeOptions">
+            <div class="payment1 option" onclick="selectOption('onetimeOptions', this)">
+                <h3>One-time payment</h3>
+                <p>₱41,999</p>
+            </div> 
+            <div class="payment2 option" onclick="selectOption('onetimeOptions', this)">
+                <h3>Celestial Financing (Pay Monthly)</h3>
+                <p>₱1,729.12/mo<br>for 24 months</p>
+            </div>
+            <div class="payment3 option" onclick="selectOption('onetimeOptions', this)">
+                <h3>One-time payment</h3>
+                <p>₱864.56<br>every 2 weeks</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="one-time">
+        <div class="one-time-content">
+            <img src="{% static 'images/credit-card.jpg' %}" alt="Credit Card" class="credit-card-image">
+            <div class="one-time-text">
+                <h3>One-time payment</h3>
+                <p>Pay with your credit card, debit card, or a pay app. Excludes taxes and shipping.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="payment-details">
+        <div class="anada-details">
+            <div class="price-item">
+                <span class="penex"><strong>PhoenixRise Zero</strong></span>
+                <span class="forty-one"><strong>₱41, 999</strong></span>
+            </div>
+            <p>512 GB | Midnight Express</p>
+            <br>
+            <div class="store-content">
+                <img src="{% static 'images/store.png' %}" alt="Store" class="store-image">
+                    <div class="store-text">
+                        <p>In-store pickup:</p>
+                        <p><a href="#">Select store</a></p>
+                    </div>
+            <div class="delivery-content">
+                <img src="{% static 'images/deliver.png' %}" alt="Store" class="delivery-image">
+                    <div class="delivery-text">
+                        <p>Delivery for <a href="#">4327</a></p>
+                    </div>
+        </div>
+        <div class="get-it">
+                <p>Get it by Nov. 2024</p>
+        </div> 
+    </div>
+           
+    <br>
+    <hr style="border-top: 2px solid black;">
+    
+    
+        <div class="pricing">
+            <div class="price-item">
+                <span>Instant Savings:</span>
+                <span>₱1,200</span>
+            </div>
+            <hr style="border-top: 2px solid black;">
+            <div class="price-item">
+                <span><strong>Total:</strong></span>
+                <span>₱40,799</span>
+            </div>
+            <div class="price-item">
+                <span><strong>You Saved Today:</strong></span>
+                <span>₱1,200</span>
+            </div>
+        </div>
+        <hr style="border-top: 2px solid black;">
+        <div class="button-container">
+            <button class="continue-button">Continue</button>
+        </div>
+
+    </div>
+</div>
+
+<script>    
+    function changeImage(phones) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = phones.src; 
+    }
+
+    function selectOption(categoryId, selectedOption) {
+        
+        const container = document.getElementById(categoryId);
+
+        const options = container.getElementsByClassName('option');
+            for (let option of options) {
+                option.classList.remove('active');
+            }
+
+        selectedOption.classList.add('active');
+    }
+</script>
+</body>
+</html>

@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cellestial | {%block title%}{%endblock%}</title>
+    {% load static %}
+    <title>{%block title%}{%endblock%} | Cellestial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Actor&family=Inika:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Khand:wght@300;400;500;600;700&family=Marcellus+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <base href="../../static/">
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet", type="text/css", href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
     
     {%block head%}
     
@@ -21,8 +23,10 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="LOGO.png" alt="Cellestial" class="logo-img" />
-            <a class="logo-text">Cellestial</a>
+            <a href="/" class="logo-text">
+                <img src="LOGO.png" alt="Cellestial" class="logo-img" />
+                <p class="logo-text">Cellestial</p>                
+            </a>
         </div>
     
         <div class="search-container">
@@ -30,9 +34,9 @@
             <i class="bx bx-search"></i>
     
             <div class="search-dropdown">
-              <a href="/shop">Shop</a>
-              <a href="/on-sale">On Sale</a>
-              <a href="/new-arrivals">New Arrivals</a>
+              <a href="/">Home</a>
+              <a href="{% url 'Cellestial:Shop' %}">Shop</a>
+              <a href="{% url 'Cellestial:Shipping'%}">Shipping for debug</a>
               <a href="/brands">Brands</a>
             </div>
         </div>
@@ -46,7 +50,15 @@
                 <i class="bx bxs-heart"></i> 
             </a>
             <a title="Add to Cart" href="/#"><i class="bx bxs-cart"></i></a>
-            <a title="User" href="/#"><i class="bx bxs-user"></i></a>
+            <a title="User" href="{% url 'users:Login' %}"><i class="bx bxs-user">
+                <div class="account-menu">
+                    <form class="account-container" action="{% url 'users:Logout'}" method="post">
+                        {%csrf_token%}
+                        <button title="Logout" type="submit">Logout</button>
+                    </form>
+                </div>
+            </i></a
+
         </div>
     </header>
     <main>
@@ -54,9 +66,69 @@
     
         {%endblock%}
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="footer-column">
+            <h1>Cellestial</h1>
+            <p>Empower your lifestyle with the latest tech. From smartphones to smart homes, we’ve got you covered. Shop with confidence.</p>
+            <div class="footer-social">
+                <a aria-label="Twitter" href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a aria-label="Facebook" href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+                <a aria-label="Instagram" href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a aria-label="Apple" href="https://apple.com"><i class="fab fa-apple"></i></a>
+            </div>
+        </div>
+        <div class="footer_container">
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Works</a></li>
+                    <li><a href="#">Career</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="#">Delivery Details</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>FAQ</h3>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Manage Deliveries</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Payments</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Vouchers</a></li>
+                    <li><a href="#">E-shipping</a></li>
+                    <li><a href="#">Other Services</a></li>
+                </ul>
+            </div>
+        </div>
     </footer>
-
+    <div class="footer-bottom">
+        <hr class="footer-divider">
+        <div class="footer-bottom-container">
+            <p>Cellestial © 2024 All Rights Reserved</p>
+            <div class="payment-methods">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+                <i class="fa-brands fa-cc-apple-pay"></i>
+                <i class="fa-brands fa-google-pay"></i>
+            </div>
+        </div>
+    </div>
+    {% block script%}
+    
+    {%endblock%}
 </body>
 </html>

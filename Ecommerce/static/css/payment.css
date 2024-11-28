@@ -3,48 +3,11 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #1A2534;
 }
-.column-shipping{
+.column-payment{
     display: flex;
     justify-content: center;
 }
-.navbar {
-    background-color: #1A2534;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.navbar-logo {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    font-size: 32px;
-    color: #FFFFFF;
-    padding-left: 20px;
-}
-.navbar-center {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-}
-.navbar-center a, .navbar-right a {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    color: #FFFFFF;
-    text-decoration: none;
-    padding: 0 20px;
-}
-.navbar-right {
-    display: flex;
-    gap: 20px;
-}
-.navbar-right a {
-    padding-right: 50px;
-}
-.navbar-space {
-    height: 1px;
-    background-color: #E2E8F0;
-}
+
 .icon-text {
     display: flex;
     align-items: center;
@@ -67,12 +30,12 @@ body {
     font-size: 20px;
 }
 
-.shipping-content {
+.payment-content {
     display: flex;
     padding: 20px;
     gap: 20px;
 }
-.column-shipping {
+.column-payment {
     flex: 2;
     background-color: #F7FAFC;
     color: #000000;
@@ -81,7 +44,7 @@ body {
     height: 600px; 
     overflow-y: auto;
 }
-.column-shipping h2 {
+.column-payment h2 {
     font-family: 'Inter', sans-serif;
     font-weight: 500; 
     font-size: 20px; 
@@ -113,7 +76,7 @@ body {
     margin: 0; 
     padding: 0 13px; 
 }
-/* end start cart shipping payment pt1 */
+/* end start cart payment payment pt1 */
 
 .form-group {
     margin-bottom: 16px;
@@ -364,6 +327,36 @@ body {
     padding-left: 175px;
 }
 
+/* Added Inline CSS */
+.horizontal-container p,
+.horizontal-container span.material-symbols-outlined,
+.horizontal-container i.fa-solid.fa-circle-check {
+    color: #3182CE;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.horizontal-container p:last-child {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#payment-details {
+    padding-left: 175px; 
+}
+
+.order-item-price {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px; /* Added margin-top to create space */
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
 /* For tablets and larger screens */
 @media screen and (max-width: 1030px) {
     /* COLUMN PAYMENT  */
@@ -496,6 +489,20 @@ body {
         font-size: 7px;
         margin-left: 2px;
     }
+
+    .horizontal-container p,
+    .horizontal-container span.material-symbols-outlined,
+    .horizontal-container i.fa-solid.fa-circle-check {
+        color: #3182CE;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    .horizontal-container p:last-child {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+    }
 }
 
 /* For very small devices */
@@ -504,12 +511,31 @@ body {
     .horizontal-container p {
         font-size: 10px;
         padding: 0 0px; 
+        color: #3182CE;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
     }
+    
     .horizontal-container {
         gap: 5px;
     }
-    .horizontal-container span{
+    
+    .horizontal-container span {
         font-size: 7px;
+    }
+    
+    .horizontal-container span.material-symbols-outlined,
+    .horizontal-container i.fa-solid.fa-circle-check {
+        color: #3182CE;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+    }
+    
+    .horizontal-container p:last-child {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
     }
 
     #payment-details{
