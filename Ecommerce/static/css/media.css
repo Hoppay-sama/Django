@@ -12,6 +12,7 @@
 body{
     background-color: #1A2534;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 a, button{
@@ -271,7 +272,7 @@ margin-bottom: 4rem;
 
 .footer-divider {
 border: none;
-border-top: 1px solid #e0e0e0;
+border-top: 2px solid #d8d8d8;
 margin: 2rem 3rem; /* Adjust margin as needed */
 }
 

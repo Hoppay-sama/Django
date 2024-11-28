@@ -9,4 +9,6 @@ urlpatterns = [
     path('Shipping/', views.shipping, name="Shipping"),
     path('Product_Page/<int:pk>', views.product_page, name="Product_Page"),
     path('Payment/', views.payment, name="Payment"),
+    path('About/', views.about, name="About"),
+    path('Contact/', views.contact, name="Contact"),
 ]       

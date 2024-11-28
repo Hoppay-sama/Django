@@ -23,3 +23,9 @@ def product_page(request, pk):
 def payment(request):
     template = loader.get_template('payment.html')
     return HttpResponse(template.render())
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
