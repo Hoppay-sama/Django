@@ -100,14 +100,13 @@ main{
                     button{
                         background-color: #1f3f52;
                         border-radius: 5px;
-                        height: 8vh;
+                        height: 5vh;
                         width: 20vw;
                         cursor: pointer;
                         color: white;
                         display: flex;
                         justify-content: center; 
                         align-items: center;
-                        
                     }
                     
                     p {
