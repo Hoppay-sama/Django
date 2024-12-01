@@ -9,7 +9,10 @@
     padding: 20px;
 }
 
-    
+hr{
+    border-top: 2px solid black;
+}    
+
 /* FOR MAIN TITLE AND IMAGES */
 .left-section {
     display: flex;
