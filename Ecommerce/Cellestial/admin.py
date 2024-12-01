@@ -1,15 +1,12 @@
 from django.contrib import admin
 from Cellestial.models import *
-from users.models import Register
 # Register your models here.
 
 
 admin.site.register(Category)
 admin.site.register(Order)
-
-class RegisterModels(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'username', 'phone_number', 'email')
-admin.site.register(Register, RegisterModels)
+admin.site.register(Color)
+admin.site.register(Storage)
 
 class CustomerModels(admin.ModelAdmin):
     list_display = ('name', 'email', 'address')

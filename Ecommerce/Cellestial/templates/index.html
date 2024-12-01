@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Purchases</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="account-container">
+    <aside class="sidebar">
+        <div class="profile-info">
+            <div class="avatar"></div>
+            <h2>Account Name</h2>
+            <button class="edit-avatar">Change Avatar</button>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="nav_li active" onclick="showProfile()">Profile</li>
+                <li class="nav_li" onclick="showPurchases()">My Purchases</li>
+                <li class="nav_li" onclick="showEWallet()">E-Wallet</li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="profile-settings">
+        <!-- Profile Section -->
+        <header class="settings-header" id="profile-section">
+            <h1>My Profile</h1>
+            <p>Manage your profile information to control, protect, and secure your account.</p>
+            <form class="profile-form" id="profile-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your Account Name">
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your Email">
+                
+                <label for="password">Password</label>
+                    <div class="password-field">
+                        <input type="password" id="password" placeholder="Enter you Password">
+                        <span class="show-password" onclick="togglePassword()">👁</span>
+                    </div>
+                
+                <label for="phone">Phone Number</label> 
+                <input type="text" id="phone" placeholder="Enter your Number">
+                
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" placeholder="Enter your Gender">
+                
+                <button type="submit" class="save-button" onclick="saveProfile()">Save</button>
+            </form>
+        </header>
+
+        <!-- My Purchases Section -->
+        <section id="my-purchases" class="hidden">
+            <h1>My Purchases</h1>
+            <p>Track your order history, manage your current transactions, and view the status of your purchases with ease.</p>            
+            <div class="purchase-status-tabs">
+                <button class="status-tab active" onclick="filterOrders('all')">All</button>
+                <button class="status-tab" onclick="filterOrders('to-pay')">To Pay</button>
+                <button class="status-tab" onclick="filterOrders('to-ship')">To Ship</button>
+                <button class="status-tab" onclick="filterOrders('to-receive')">To Receive</button>
+                <button class="status-tab" onclick="filterOrders('completed')">Completed</button>
+                <button class="status-tab" onclick="filterOrders('cancelled')">Cancelled</button>
+                <button class="status-tab" onclick="filterOrders('return-refund')">Return/Refund</button>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search by Seller Name, Order ID or Product name">
+            </div>
+
+            <div class="order-list" id="order-list">
+                <div class="order-item" data-status="to-pay">
+                    <div class="order-seller">
+                        <h3>Seller A</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name A</h4>
+                            <p>Variation: Product</p>
+                            <p>Quantity: x1</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: Awaiting Payment</p>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱100</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+
+                <div class="order-item" data-status="to-ship">
+                    <div class="order-seller">
+                        <h3>Seller B</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name B</h4>
+                            <p>Variation: Large</p>
+                            <p>Quantity: x2</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: To Ship</p>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱200</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+
+                <!-- To Receive -->
+                <div class="order-item" data-status="to-receive">
+                    <div class="order-seller">
+                        <h3>Seller C</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name C</h4>
+                            <p>Variation: Medium</p>
+                            <p>Quantity: x1</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: In Transit</p>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱150</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+
+                <!-- Completed -->
+                <div class="order-item" data-status="completed">
+                    <div class="order-seller">
+                        <h3>Seller D</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name D</h4>
+                            <p>Variation: XL</p>
+                            <p>Quantity: x1</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: Delivered</p>
+                            <span class="status-rated">RATED</span>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱250</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+
+                <!-- Cancelled -->
+                <div class="order-item" data-status="cancelled">
+                    <div class="order-seller">
+                        <h3>Seller E</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name E</h4>
+                            <p>Variation: Small</p>
+                            <p>Quantity: x3</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: Cancelled</p>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱300</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+
+                <!-- Returned -->
+                <div class="order-item" data-status="return-refund">
+                    <div class="order-seller">
+                        <h3>Seller F</h3>
+                        <button class="contact-button">Chat</button>
+                        <button class="view-shop-button">View Shop</button>
+                    </div>
+                    <div class="order-details">
+                        <img src="1.jpg" alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h4>Product Name F</h4>
+                            <p>Variation: Small</p>
+                            <p>Quantity: x3</p>
+                        </div>
+                        <div class="order-status">
+                            <p>Status: Return/Refund</p>
+                        </div>
+                        <div class="order-total">
+                            <p>Order Total: ₱400</p>
+                        </div>
+                    </div>
+                    <div class="order-actions">
+                        <button class="buy-again-button">Buy Again</button>
+                        <button class="contact-seller-button">Contact Seller</button>
+                        <button class="view-shop-rating-button">View Shop Rating</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- E-Wallet Section -->
+        <section id="e-wallet" class="hidden">
+            <header>
+                <h1>E-Wallet</h1>
+                <p>Manage your wallet balance and transactions.</p>
+            </header>
+            <div class="wallet-info">
+                <h2>Balance: ₱<span id="wallet-balance">0.00</span></h2>
+                <button onclick="showAddFunds()" id="add-btn">Add Funds</button>
+                <button onclick="showWithdrawFunds()" id="withdraw-btn">Withdraw</button>
+            </div>
+            <div id="add-funds-section" class="hidden">
+                <input type="number" id="fund-amount" placeholder="Enter amount">
+                <button onclick="addFunds()" id="add-btn">Add Funds</button>
+            </div>
+            <div id="withdraw-funds-section" class="hidden">
+                <input type="number" id="withdraw-amount" placeholder="Enter amount">
+                <button onclick="withdrawFunds()" id="withdraw-btn">Withdraw</button>
+            </div>
+            <h3>Transaction History</h3>
+            <ul id="transaction-history">
+                <li>No transactions yet.</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

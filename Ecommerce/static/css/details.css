@@ -1,15 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
-    background-image: linear-gradient(to top, #4d6e9a, #435f86, #395172, #2f435f, #26364c, #233145, #202c3e, #1d2737, #1f2939, #212a3b, #232c3d, #252e3f);
-    background-size: cover;
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    margin: 0;
-    color: white;
-}
-
 .container {
     max-width: 1200px;
+    color: white;
     margin: 0 auto;
     padding: 20px;
     display: grid;
@@ -23,7 +14,7 @@ body {
 .left-section {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5vh;
 }
 
 .title-container {
@@ -32,7 +23,7 @@ body {
 
 .title {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 2vh;
 }
 
 .subtitle {
@@ -43,19 +34,21 @@ body {
 .image-gallery {
     display: flex;
     flex-direction: row;
-    gap: 1px;
+    justify-content: center;
+    width: 30vw;
+    gap: 1vh;
 }
 
 .main-image img {
-    width: 400px;
-    height: 430px;
+    width: 27vw;
+    height: 60vh;
     border-radius: 10px;
 }
 
 .horizontal-images {
     display: flex;
-    gap: 10px;
-    margin-top: 5px;
+    gap: 2vw;
+    margin-top: 1vh;
 }
 
 .horizontal-images img {
@@ -76,7 +69,6 @@ body {
 .product-details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .button {
@@ -89,7 +81,6 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     margin-top: 30px; 
-    margin-left: 300px;
 }
 
 .model-options {
@@ -242,7 +233,7 @@ body {
 
 /* FOR PAYMENT OPTION */
 .payment-options {
-    display: flex;
+    display: none;
     flex-direction: column;
     text-align: center;
     gap: 5px;

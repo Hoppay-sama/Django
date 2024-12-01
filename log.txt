@@ -24,7 +24,8 @@ Need to report:
 - about Us
 - contact Us
 - product page (DONE!!!)
-- login/create acc (incomplete / partial)
+- product details (MOCKUP DONE!!!)
+- login/create acc (DONE!!!)
 - payment page
 - add to cart
 

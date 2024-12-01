@@ -1,29 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product details</title>
-    {% load static %}
+{% extends 'master.html' %}
+{% load static %}
+
+{% block title %}
+ {{product.name}}
+{% endblock %}
+
+{% block head %}
     <link rel="stylesheet" href="{% static 'css/details.css' %}">
-</head>
-<body>
+
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <div class="left-section">
             <div class="title-container">
-                <h1 class="title">Buy PhoenixRise Zero</h1>
-                <p class="subtitle">from ₱37,499 to ₱1,562.42/mo for 24 months</p>
+                <h1 class="title">{{ product.name }}</h1>
+                <p class="subtitle">{{product.description}}</p>
             </div>
             <div class="image-gallery">
                 <div class="main-image">
-                    <img src="{% static 'images/phone-4.png' %}" alt="Main Image" id="mainImage">
+                    <img src="{{product.image.url}}" alt="Main Image" id="mainImage">
                 </div>
             </div>
 
             <div class="horizontal-images">
-                <img src="{% static 'images/phone-1.png' %}" alt="Horizontal Phone 1" class="phones" onmouseover="changeImage(this)"> 
-                <img src="{% static 'images/phone-2.png' %}" alt="Horizontal Phone 2" class="phones" onmouseover="changeImage(this)">
-                <img src="{% static 'images/phone-3.png' %}" alt="Horizontal Phone 3" class="phones" onmouseover="changeImage(this)">
+                <img src="{{product.image.url}}" alt="{{product.name}}" class="phones" onmouseover="changeImage(this)"> 
+                <img src="{{product.image.url}}" alt="{{product.name}}" class="phones" onmouseover="changeImage(this)">
+                <img src="{{product.image.url}}" alt="{{product.name}}" class="phones" onmouseover="changeImage(this)">
             </div>
 
 
@@ -40,74 +43,71 @@
         <div class="product-details">
             <div class="button">Get 3% Daily Cashback with Interstellar Pass</div>
 
-            <div class="options-section">
-                <h2>Find the Model That Suits Your Style</h2>
-                <div class="model-options" id="modelOptions">
-                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
-                        <div class="details">
-                            <strong>PhoenixRise Zero</strong>
-                            <span>6 inch display</span>
+                <div class="options-section">
+                    <h2>Find the Model That Suits Your Style</h2>
+                    <div class="model-options" id="modelOptions">
+                        <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                            <div class="details">
+                                <strong>{{product.name}} Zero</strong>
+                                <span>6 inch display</span>
+                            </div>
+                            <span>From ₱37,499 <br> or ₱1,562.42/mo <br> for 24 months</span>
                         </div>
-                        <span>From ₱37,499 <br> or ₱1,562.42/mo <br> for 24 months</span>
+                        <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                            <div class="details" >
+                                <strong>{{product.name}}</strong>
+                                <span>6 inch display</span>
+                            </div>
+                            <span>From ₱41,999 <br> or ₱1,729.12/mo <br> for 24 months</span>
+                        </div>
+                        <div class="model-option option" onclick="selectOption('modelOptions', this)">
+                            <div class="details">
+                                <strong>Prestige {{product.name}}</strong>
+                                <span>6.9 inch display</span>
+                            </div>
+                            <span>From ₱59,999 <br> or ₱2,500/mo for <br> 24 months</span>
+                        </div>
                     </div>
-                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
-                        <div class="details" >
-                            <strong>PhoenixRise</strong>
-                            <span>6 inch display</span>
+
+                    <div class="options-section storage-options">
+                    <h2>Storage Options</h2>
+                    <div class="model-options" id="storageOptions">
+                        <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                            <div class="details " >
+                                <strong>256 GB</strong>
+                            </div>
+                            <span>From ₱37, 499 <br> or ₱1,562.42/mo <br> for 24 months</span>
                         </div>
-                        <span>From ₱41,999 <br> or ₱1,729.12/mo <br> for 24 months</span>
-                    </div>
-                    <div class="model-option option" onclick="selectOption('modelOptions', this)">
-                        <div class="details">
-                            <strong>Prestige PhoenixRise</strong>
-                            <span>6.9 inch display</span>
+                        <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                            <div class="details">
+                                <strong>512 GB</strong>
+                            </div>
+                            <span>From ₱41, 499 <br> or ₱1,729.12/mo <br> for 24 months</span>
                         </div>
-                        <span>From ₱59,999 <br> or ₱2,500/mo for <br> 24 months</span>
+                        <div class="model-option option" onclick="selectOption('storageOptions', this)">
+                            <div class="details " >
+                                <strong>1 TB</strong>
+                            </div>
+                            <span>From ₱59, 999 <br> or ₱2,500/mo for <br> 24 months</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="options-section storage-options">
-                <h2>Storage Options</h2>
-                <div class="model-options" id="storageOptions">
-                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
-                        <div class="details " >
-                            <strong>256 GB</strong>
-                        </div>
-                        <span>From ₱37, 499 <br> or ₱1,562.42/mo <br> for 24 months</span>
-                    </div>
-                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
-                        <div class="details">
-                            <strong>512 GB</strong>
-                        </div>
-                        <span>From ₱41, 499 <br> or ₱1,729.12/mo <br> for 24 months</span>
-                    </div>
-                    <div class="model-option option" onclick="selectOption('storageOptions', this)">
-                        <div class="details " >
-                            <strong>1 TB</strong>
-                        </div>
-                        <span>From ₱59, 999 <br> or ₱2,500/mo for <br> 24 months</span>
-                    </div>
-                </div>
-            </div>
-
             </div>
         </div>
 
     <section class="trade-in-section">
-        <h2>Celestial Trade-in</h2>
-        <p>Celestial Trade-in value up to ₱12,900</p>
+        <h2>Celestial </h2>
         <div class="trade-in-buttons" id="tradeOptions">
-            <div class="yes option" onclick="selectOption('tradeOptions', this)">
-                <h3>Yes, Trade-in</h3>
-            </div>
+            <button class="yes option" id="addToCart" value="{{product.id}}" onclick="selectOption('tradeOptions', this)">
+                Add To Cart
+            </button>
             <div class="no option" onclick="selectOption('tradeOptions', this)">
-                <h3>No</h3>
-                <p>Get $500 Cellestial Instant Savings</p>
+                <a href="" >Check Out</a>
             </div>
         </div>
     </section>
 
-    <section class="payment-options">
+    <section class="payment-options" >
         <h2>Choose your Payment option</h2>
         <div class="options-container" id="onetimeOptions">
             <div class="payment1 option" onclick="selectOption('onetimeOptions', this)">
@@ -127,7 +127,7 @@
 
 
 
-    <div class="one-time">
+    <div class="one-time" >
         <div class="one-time-content">
             <img src="{% static 'images/credit-card.jpg' %}" alt="Credit Card" class="credit-card-image">
             <div class="one-time-text">
@@ -139,7 +139,7 @@
 
 
 
-    <div class="payment-details">
+    <div class="payment-details" >
         <div class="anada-details">
             <div class="price-item">
                 <span class="penex"><strong>PhoenixRise Zero</strong></span>
@@ -163,11 +163,11 @@
                 <p>Get it by Nov. 2024</p>
         </div> 
     </div>
-           
+        
     <br>
     <hr style="border-top: 2px solid black;">
-    
-    
+
+
         <div class="pricing">
             <div class="price-item">
                 <span>Instant Savings:</span>
@@ -189,25 +189,26 @@
         </div>
 
     </div>
-</div>
+    </div>
+{%endblock%}
 
-<script>    
-    function changeImage(phones) {
-        const mainImage = document.getElementById('mainImage');
-        mainImage.src = phones.src; 
-    }
+{% block scripts %}
+    <script>    
+        function changeImage(phones) {
+            const mainImage = document.getElementById('mainImage');
+            mainImage.src = phones.src; 
+        }
 
-    function selectOption(categoryId, selectedOption) {
-        
-        const container = document.getElementById(categoryId);
+        function selectOption(categoryId, selectedOption) {
+            
+            const container = document.getElementById(categoryId);
 
-        const options = container.getElementsByClassName('option');
-            for (let option of options) {
-                option.classList.remove('active');
-            }
+            const options = container.getElementsByClassName('option');
+                for (let option of options) {
+                    option.classList.remove('active');
+                }
 
-        selectedOption.classList.add('active');
-    }
-</script>
-</body>
-</html>
+            selectedOption.classList.add('active');
+        }
+    </script>
+{% endblock %}

@@ -28,7 +28,7 @@
                                 <img src="{{ product.image.url }}"  alt="Product 1">
                                 <p class="deal">{{product.name}}</p>
                                 <p class="product-price">₱{{product.price}}</p>
-                                <a href="buynow.html">
+                                <a href="{% url 'Cellestial:Product' product.id %}">
                                     <button>BUY NOW</button>
                                 </a>
                             </div>
@@ -45,7 +45,7 @@
                         <img src="{{ product.image.url }}"  alt="Product 1">
                         <p class="deal">{{product.name}}</p>
                         <p class="product-price">₱{{product.price}}</p>
-                        <a href="buynow.html">
+                        <a href="{% url 'Cellestial:Product' product.id %}">
                             <button>BUY NOW</button>
                         </a>
                     </div>
@@ -62,7 +62,7 @@
                         <img src="{{ product.image.url }}"  alt="Product 1">
                         <p class="deal">{{product.name}}</p>
                         <p class="product-price">₱{{product.price}}</p>
-                        <a href="buynow.html">
+                        <a href="{% url 'Cellestial:Product' product.id %}">
                             <button>BUY NOW</button>
                         </a>
                     </div>
@@ -84,7 +84,7 @@
                             ₱{{product.sale_price}}
                         </p>
                         
-                        <a href="buynow.html">
+                        <a href="{% url 'Cellestial:Product' product.id %}">
                             <button>BUY NOW</button>
                         </a>
                     </div>

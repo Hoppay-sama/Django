@@ -13,7 +13,14 @@
 
     <base href="../../static/">
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- add to cart -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous">
+    </script>
     
     {%block head%}
     
@@ -36,7 +43,7 @@
             <div class="search-dropdown">
               <a href="/">Home</a>
               <a href="{% url 'Cellestial:Shop' %}">Shop</a>
-              <a href="{% url 'Cellestial:Shipping'%}">Shipping for debug</a>
+              <a href="{% url 'Cellestial:Shipping'%}">Check Shipping</a>
               <a href="/brands">Brands</a>
             </div>
         </div>
@@ -46,19 +53,26 @@
     
     
         <div class="icons">
-            <a title="Wishlist" href="/#">
-                <i class="bx bxs-heart"></i> 
-            </a>
-            <a title="Add to Cart" href="/#"><i class="bx bxs-cart"></i></a>
-            <a title="User" href="{% url 'users:Login' %}"><i class="bx bxs-user">
-                <div class="account-menu">
-                    <form class="account-container" action="{% url 'users:Logout'}" method="post">
-                        {%csrf_token%}
-                        <button title="Logout" type="submit">Logout</button>
-                    </form>
+            <div>
+                <a title="Wishlist" href="/#">
+                    <i class="bx bxs-heart"></i> 
+                </a>
+            </div>
+            <div>
+                <a title="Cart" href="{% url 'Cart:Cart_summary' %}"><i class="bx bxs-cart"></i></a>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="account-menu">
+                <a title="User" href="{% url 'Cellestial:Register' %}"><i class="bx bxs-user"></i> {{request.user.username}}</a>
+                <div class="extension">
+                    <a title="Logout" href="{% url 'Cellestial:Logout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
                 </div>
-            </i></a
-
+            </div>
+            {% else %}
+            <div>
+                <a title="Login" href="{% url 'Cellestial:Login' %}"><i class="bx bxs-user"></i></a>
+            </div>
+            {% endif %}
         </div>
     </header>
     <main>
@@ -81,7 +95,7 @@
             <div class="footer-column">
                 <h3>Company</h3>
                 <ul>
-                    <li><a href="#">About</a></li>
+                    <li><a href="{% url 'Cellestial:About' %}" target="_blank">About</a></li>
                     <li><a href="#">Features</a></li>
                     <li><a href="#">Works</a></li>
                     <li><a href="#">Career</a></li>
@@ -90,9 +104,9 @@
             <div class="footer-column">
                 <h3>Help</h3>
                 <ul>
-                    <li><a href="#">Customer Support</a></li>
+                    <li><a href="{% url 'Cellestial:Contact' %}" target="_blank">Contact us</a></li>
                     <li><a href="#">Delivery Details</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="{% url 'Cellestial:ToC'%}" target="_blank">Terms & Conditions</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>

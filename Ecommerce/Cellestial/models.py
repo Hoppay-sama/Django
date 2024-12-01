@@ -34,6 +34,7 @@ class Phone(models.Model):
     description = models.CharField(max_length=256, default='', blank=True, null=True)
     is_sale = models.BooleanField(default=False)
     sale_price = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
+
     image = models.ImageField(upload_to='uploads/products/')
 
     def save(self, *args, **kwargs):
@@ -43,9 +44,12 @@ class Phone(models.Model):
 
 
 class Order(models.Model):
-    product = models.ForeignKey(Phone, on_delete=models.CASCADE)
+    phone = models.ForeignKey(Phone, on_delete=models.CASCADE)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     address = models.CharField(max_length=200, blank=True, null=True)
     date_ordered = models.DateTimeField(default=datetime.datetime.today)
     status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.customer.name}"

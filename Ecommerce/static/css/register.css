@@ -110,7 +110,7 @@ main{
                             font-size: 0.7vw;
                         }
                     }
-                
+/*                 
                     .input-field:last-child {
                         display: flex;
                         justify-content: center;
@@ -121,7 +121,7 @@ main{
                             margin-left: 10px;
                         }
                         
-                    }
+                    } */
                     
                 }
             }

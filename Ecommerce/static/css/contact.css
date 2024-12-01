@@ -51,10 +51,10 @@ h1 {
     color: #474544;
     font-size: 32px;
     font-weight: 700;
-    letter-spacing: 7px;
+    letter-spacing: 4px;
     text-align: center;
     text-transform: uppercase;
-    font-family: "Nunito", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 .underline {
@@ -137,6 +137,11 @@ select::-ms-expand {
 
 .telephone {
     width: 100%;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
 }
 
 textarea {

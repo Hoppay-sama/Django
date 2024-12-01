@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Cellestial',
-    'users',
+    'Cart',
     'livereload',
 ]
 
@@ -67,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Cart.context_processors.cart',
+                'Cellestial.context_processors.request_context',
             ],
         },
     },
@@ -104,11 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-AUTHENTICATION_BACKENDS = [
-    'users.auth_backends.CustomAuthBackend',
-]
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -142,3 +139,5 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
