@@ -40,3 +40,12 @@ links:
 
 (Product page)
 -
+
+
+ABOUT SA REVISIONS according kay Sir Rovie:
+
+Terms and Conditions : ayusin spacing (top and bottom part) sa content (DONE!!!)
+Navbar : Lagyan ng arrow button (like ung nagawa ko noon) sa ilalim tas function is like burger menu (DONE!!!)
+Product Page : Minor revisions sa Design (wag gawin purple font color ng "Add to Cart" or "Check Out" buttons )
+Functionalities: dapat connected na sa database ung cart function
+(Kahit inde na responsive ang website sabi ni sir)

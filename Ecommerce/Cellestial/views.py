@@ -54,6 +54,9 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def ToC(request):
+    return render(request, 'terms_and_con.html')
+
 def shop(request):  
     try:
         products = models.Phone.objects.all()
@@ -65,7 +68,15 @@ def shop(request):
 # Product Detail    
 def product(request, pk):
     product = models.Phone.objects.get(id=pk)
-    return render(request, 'details.html', {'product': product})
+    storage = product.storage.all()
+    for each in storage:
+        each.price += product.price
+    context = {
+        'product': product,
+        'storage': storage,
+        'color' : product.color.all(),
+    }
+    return render(request, 'details.html', context)
 
 # Checkouts
 def shipping(request):
@@ -73,6 +84,3 @@ def shipping(request):
 
 def payment(request):
     return render(request, 'payment.html')
-
-def ToC(request):
-    return render(request, 'terms_and_con.html')

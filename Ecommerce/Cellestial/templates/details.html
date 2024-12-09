@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
- {{product.name}}
+    {{product.name}}
 {% endblock %}
 
 {% block head %}
@@ -33,9 +33,9 @@
             <div class="options-section">
                 <h2>Color</h2>
                 <div class="colors" id="colorOptions">
-                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
-                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
-                    <div class="color-circle option" onclick="selectOption('colorOptions', this)"></div>
+                    {% for c in color %}
+                    <div class="color-circle option" data-color="{{ c.name }}" onclick="selectOption('colorOptions', this)"></div>
+                    {% endfor %}
                 </div>
             </div>            
         </div>
@@ -58,7 +58,7 @@
                                 <strong>{{product.name}}</strong>
                                 <span>6 inch display</span>
                             </div>
-                            <span>From ₱41,999 <br> or ₱1,729.12/mo <br> for 24 months</span>
+                            <span>From ₱{{product.price}} <br> or ₱1,729.12/mo <br> for 24 months</span>
                         </div>
                         <div class="model-option option" onclick="selectOption('modelOptions', this)">
                             <div class="details">
@@ -72,24 +72,14 @@
                     <div class="options-section storage-options">
                     <h2>Storage Options</h2>
                     <div class="model-options" id="storageOptions">
+                        {% for storage in storage %}                        
                         <div class="model-option option" onclick="selectOption('storageOptions', this)">
                             <div class="details " >
-                                <strong>256 GB</strong>
+                                <strong>{{storage.name}}</strong>
                             </div>
-                            <span>From ₱37, 499 <br> or ₱1,562.42/mo <br> for 24 months</span>
+                            <span>For ₱{{storage.price}}</span>
                         </div>
-                        <div class="model-option option" onclick="selectOption('storageOptions', this)">
-                            <div class="details">
-                                <strong>512 GB</strong>
-                            </div>
-                            <span>From ₱41, 499 <br> or ₱1,729.12/mo <br> for 24 months</span>
-                        </div>
-                        <div class="model-option option" onclick="selectOption('storageOptions', this)">
-                            <div class="details " >
-                                <strong>1 TB</strong>
-                            </div>
-                            <span>From ₱59, 999 <br> or ₱2,500/mo for <br> 24 months</span>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -98,117 +88,120 @@
     <section class="trade-in-section">
         <h2>Celestial </h2>
         <div class="trade-in-buttons" id="tradeOptions">
-            <button class="yes option" id="addToCart" value="{{product.id}}" onclick="selectOption('tradeOptions', this)">
+            <button type='button'class="yes option" id="addToCart" value="{{product.id}}">
                 Add To Cart
             </button>
-            <div class="no option" onclick="selectOption('tradeOptions', this)">
-                <a href="" >Check Out</a>
-            </div>
+            <button class="no option" onclick="selectOption('tradeOptions', this)">
+                Check Out
+            </button>
         </div>
     </section>
 
-    <section class="payment-options" >
+    <section id="payment-options">
         <h2>Choose your Payment option</h2>
         <div class="options-container" id="onetimeOptions">
-            <div class="payment1 option" onclick="selectOption('onetimeOptions', this)">
+            <div class="payment option" onclick="selectOption('onetimeOptions', this)">
                 <h3>One-time payment</h3>
-                <p>₱41,999</p>
+                <p>₱{{storage.price}}</p>
             </div> 
-            <div class="payment2 option" onclick="selectOption('onetimeOptions', this)">
+            <div class="payment option" onclick="selectOption('onetimeOptions', this)">
                 <h3>Celestial Financing (Pay Monthly)</h3>
                 <p>₱1,729.12/mo<br>for 24 months</p>
             </div>
-            <div class="payment3 option" onclick="selectOption('onetimeOptions', this)">
+            <div class="payment option" onclick="selectOption('onetimeOptions', this)">
                 <h3>One-time payment</h3>
                 <p>₱864.56<br>every 2 weeks</p>
             </div>
         </div>
+        
+    
+        <div class="one-time" >
+            <div class="one-time-content">
+                <img src="{% static 'images/credit-card.jpg' %}" alt="Credit Card" class="credit-card-image">
+                <div class="one-time-text">
+                    <h3>One-time payment</h3>
+                    <p>Pay with your credit card, debit card, or a pay app. Excludes taxes and shipping.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    
+        <div class="payment-details" >
+            <div class="anada-details">
+                <div class="price-item">
+                    <span class="penex"><strong>PhoenixRise Zero</strong></span>
+                    <span class="forty-one"><strong>₱41, 999</strong></span>
+                </div>
+                <p>512 GB | Midnight Express</p>
+                <br>
+                <div class="store-content">
+                    <img src="{% static 'images/store.png' %}" alt="Store" class="store-image">
+                        <div class="store-text">
+                            <p>In-store pickup:</p>
+                            <p><a href="#">Select store</a></p>
+                        </div>
+                </div>
+                <div class="delivery-content">
+                    <img src="{% static 'images/deliver.png' %}" alt="Store" class="delivery-image">
+                        <div class="delivery-text">
+                            <p>Delivery for <a href="#">4327</a></p>
+                        </div>
+                </div>
+            <div class="get-it">
+                    <p>Get it by Nov. 2024</p>
+            </div> 
+        </div>
+            
+        <br>
+        <hr>
+    
+    
+            <div class="pricing">
+                <div class="price-item">
+                    <span>Instant Savings:</span>
+                    <span>₱1,200</span>
+                </div>
+                <hr>
+                <div class="price-item">
+                    <span><strong>Total:</strong></span>
+                    <span>₱40,799</span>
+                </div>
+                <div class="price-item">
+                    <span><strong>You Saved Today:</strong></span>
+                    <span>₱1,200</span>
+                </div>
+            </div>
+            <hr>
+            <div class="button-container">
+                <button class="continue-button">Continue</button>
+            </div>
     </section>
 
 
-
-    <div class="one-time" >
-        <div class="one-time-content">
-            <img src="{% static 'images/credit-card.jpg' %}" alt="Credit Card" class="credit-card-image">
-            <div class="one-time-text">
-                <h3>One-time payment</h3>
-                <p>Pay with your credit card, debit card, or a pay app. Excludes taxes and shipping.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="payment-details" >
-        <div class="anada-details">
-            <div class="price-item">
-                <span class="penex"><strong>PhoenixRise Zero</strong></span>
-                <span class="forty-one"><strong>₱41, 999</strong></span>
-            </div>
-            <p>512 GB | Midnight Express</p>
-            <br>
-            <div class="store-content">
-                <img src="{% static 'images/store.png' %}" alt="Store" class="store-image">
-                    <div class="store-text">
-                        <p>In-store pickup:</p>
-                        <p><a href="#">Select store</a></p>
-                    </div>
-            <div class="delivery-content">
-                <img src="{% static 'images/deliver.png' %}" alt="Store" class="delivery-image">
-                    <div class="delivery-text">
-                        <p>Delivery for <a href="#">4327</a></p>
-                    </div>
-        </div>
-        <div class="get-it">
-                <p>Get it by Nov. 2024</p>
-        </div> 
-    </div>
-        
-    <br>
-    <hr>
-
-
-        <div class="pricing">
-            <div class="price-item">
-                <span>Instant Savings:</span>
-                <span>₱1,200</span>
-            </div>
-            <hr>
-            <div class="price-item">
-                <span><strong>Total:</strong></span>
-                <span>₱40,799</span>
-            </div>
-            <div class="price-item">
-                <span><strong>You Saved Today:</strong></span>
-                <span>₱1,200</span>
-            </div>
-        </div>
-        <hr>
-        <div class="button-container">
-            <button class="continue-button">Continue</button>
-        </div>
-
-    </div>
-    </div>
 {%endblock%}
 
 {% block scripts %}
-    <script>    
-        function changeImage(phones) {
-            const mainImage = document.getElementById('mainImage');
-            mainImage.src = phones.src; 
-        }
+    <script>
+        $(document).on('click', '#addToCart', function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '{% url "Cart:Cart_add" %}',
+                data: {
+                    product_id: $('#addToCart').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    action: 'post'
+                },
 
-        function selectOption(categoryId, selectedOption) {
-            
-            const container = document.getElementById(categoryId);
+                success: function(json) {
+                    console.log(json);
+                },
 
-            const options = container.getElementsByClassName('option');
-                for (let option of options) {
-                    option.classList.remove('active');
+                error: function(xhr, errmsg, err) {
                 }
-
-            selectedOption.classList.add('active');
-        }
+            });
+        });
     </script>
+    <script src="{% static 'js/details.js' %}"></script>
 {% endblock %}

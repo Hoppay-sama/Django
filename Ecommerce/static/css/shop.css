@@ -71,7 +71,7 @@ body {
 
 
                     img{
-                        transition: all 0.3s ease-out;
+                        transition: all 0.3s ease-in-out;
                         height: 350px;
                         width: 240px;
                         object-fit: fill;

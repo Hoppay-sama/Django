@@ -35,37 +35,86 @@ h2 {
 }
 
 .cart-items {
-    background-color: #ffffff;
+    background-color: #465c88;
     border-radius: 10px; 
     padding: 1rem;
     flex: 1;
     height: 65vh;
-    overflow: auto;
+    overflow-x: hidden;
     /* Remove scrollbar-gutter for compatibility */
     -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(0,0,0,0.99) 101%);
     mask-image: radial-gradient(circle, rgba(0,0,0,1) 100%, rgba(0,0,0,0.99) 101%);
 }
 
 .cart-item {
+    background-color: #f0ededd3;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-top:1vh;
     padding: 1rem;
-    border-bottom: 1px solid #333;
+    border: 1px solid #333;
     border-radius: 10px;
+    height: fit-content;
 }
 
 .item-img {
-    flex: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 25vh;
+
+    img {
+        width: 70%;
+        height: 100%;
+    }
 }
 
 .item-info {
-    flex: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+    
+    p {
+        color: #3e4042;
+    }
+
+    h3 {
+        font-size: 4vh;
+        color: #000000;
+    }
+
+    .price {
+        color: #ff3d00;
+        font-size: 3vh;
+        font-weight: 600;
+        margin-top: 10vh;
+    }
 }
 
 .item-quantity {
-    flex: 30%;
+    display: flex;
     color: #000000;
+    align-items: center;
+    gap: 0.5rem;
+
+    input{
+        width: 3vw;
+        height: 3vh;
+        text-align: center;
+        border: 1px solid #686b6f;
+        border-radius: 15% ;
+    }
+
+    button {
+        padding: 0.2rem 0.5rem;
+        background-color:#A9B2C3;
+        color: #1b1f3b;
+        border: none;
+        border-radius: 4px;
+    }
 }
 
 .delete {
@@ -87,34 +136,11 @@ h2 {
 .delete:hover {
     background-color: #e60000;
     transform: scale(1.1); 
-}
-
-.delete:focus {
     outline: 2px solid #ff9999; 
     outline-offset: 2px;
 }
 
-.item-info h3 {
-    margin: 0;
-    font-size: 1rem;
-    color: #000000;
-}
 
-.item-info p {
-    color: #A9B2C3;
-}
-
-.price {
-    color: #ff3d00;
-}
-
-.item-quantity button {
-    padding: 0.2rem 0.5rem;
-    background-color:#A9B2C3;
-    color: #1b1f3b;
-    border: none;
-    border-radius: 4px;
-}
 
 .order-summary {
     background-color: #ffffff;

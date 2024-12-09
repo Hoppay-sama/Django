@@ -14,72 +14,24 @@ Cart
 <div class="cart-content">
     
     <div class="cart-items">
-        <div class="cart-item">
-            <img class="item-img" src="{% static 'img1.png' %}" alt="Myphone Janjalani">
-            <div class="item-info">
-                <h3>Myphone Janjalani</h3>
-                <p>Model: Janjalani</p>
-                <p>Color: <span class="color">White</span></p>
-                <p class="price">₱1234.567</p>
+        {% for items in cart_products %}
+            <div class="cart-item">
+                <div  class="item-img" >
+                    <img src="{{items.image.url}}" alt="{{items.name}}">
+                </div>
+                <div class="item-info">
+                    <h3>{{items.name}}</h3>
+                    <p>Color: <span class="detail">White</span></p>
+                    <p>Storage: <span class="detail">1TB</span></p>
+                    <p class="price">₱{{items.price}}</p>
+                </div>
+                <div class="item-quantity">
+                    <label>Quantity:</label>
+                    <input title="quantity" type="number" value="{{items.quantity}}" min="1" >
+                </div>
+                <button class="delete" data-item-id="1">🗑️</button>
             </div>
-            <div class="item-quantity">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-            <button class="delete" data-item-id="1">🗑️</button>
-        </div>
-    
-        
-        <div class="cart-item">
-            <img class="item-img" src="{% static 'img2.png' %}" alt="Myphone Pro">
-            <div class="item-info">
-                <h3>Myphone Pro</h3>
-                <p>Model: Pro</p>
-                <p>Color: <span class="color">Red</span></p>
-                <p class="price">₱1234.567</p>
-            </div>
-            <div class="item-quantity">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-            <button class="delete" data-item-id="2">🗑️</button>
-        </div>
-    
-       
-        <div class="cart-item">
-            <img class="item-img" src="{% static 'img3.png' %}" alt="Iphone Pro Max 15">
-            <div class="item-info">
-                <h3>Iphone Pro Max 15</h3>
-                <p>Model: Pro Max 15</p>
-                <p>Color: <span class="color">Blue</span></p>
-                <p class="price">₱1234.567</p>
-            </div>
-            <div class="item-quantity">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-            <button class="delete" data-item-id="3">🗑️</button>
-        </div>
-
-        <div class="cart-item">
-            <img class="item-img" src="{% static 'img3.png' %}" alt="Iphone Pro Max 15">
-            <div class="item-info">
-                <h3>Iphone Pro Max 15</h3>
-                <p>Model: Pro Max 15</p>
-                <p>Color: <span class="color">Blue</span></p>
-                <p class="price">₱1234.567</p>
-            </div>
-            <div class="item-quantity">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-            </div>
-            <button class="delete" data-item-id="4">🗑️</button>
-        </div>   
-        
+        {% endfor %}
     </div>
     
 

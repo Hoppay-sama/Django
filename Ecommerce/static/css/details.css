@@ -153,28 +153,9 @@ hr{
 .color-circle {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    background-color: grey;
-    border: 2px solid white;
     cursor: pointer;
-}
-
-.color-circle:nth-child(1) {
-    background-color: #1a4d90;
-}
-
-.color-circle:nth-child(2) {
-    background-color: rgba(139, 139, 139, 0.534);
-}
-
-.color-circle:nth-child(3) {
-    background-color: #e68a24;
-}
-
-
-
-.color-circle:nth-child(5) {
-    background-color: #e68a24;
+    border-radius: 50%;
+    border: 2px solid white;
 }
 
 /* FOR TRADE-IN KENEME */
@@ -203,10 +184,10 @@ hr{
     display: flex;
     gap: 40px;
     margin-top: 20px;
+    height: 10vh;
 }
 
-.yes, 
-.no { 
+.yes, .no { 
     background: transparent;
     padding: 5px;
     border-radius: 8px;
@@ -235,113 +216,79 @@ hr{
 }
 
 /* FOR PAYMENT OPTION */
-.payment-options {
-    display: none;
+#payment-options {
+    display: flex;
     flex-direction: column;
     text-align: center;
     gap: 5px;
     grid-column: 1 / -1;
     margin-top: 40px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    
+    .options-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .payment {
+            background: transparent;
+            padding: 5px;
+            border-radius: 8px;
+            width: 20vw;
+            text-align: left;
+            color: white;
+            border: 1px solid #69a9f7;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .payment:hover {
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.02);
+        }
+        
+        /* FOR ONE-TIME KENEME */
+        .one-time {
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            padding: 20px;
+            width: 95%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+        
+        .one-time-content {
+            display: flex;
+            align-items: center;  
+            gap: 20px;
+        }
+        
+        .credit-card-image {
+            width: 90px;  
+            height: auto;  
+        }
+        
+        .one-time-text h3 {
+            margin: 0;  
+            font-size: 25px; 
+        }
+        
+        .one-time-text p {
+            margin: 0;  
+            font-size: 16px; 
+        }
+
+    }
 }
 
-.payment-options h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: left;
-}
 
-.options-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.payment1 {
-    background: transparent;
-    padding: 5px;
-    border-radius: 8px;
-    width: 29%;
-    text-align: left;
-    color: white;
-    border: 1px solid #69a9f7;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.payment2 {
-    background: transparent;
-    padding: 5px;
-    border-radius: 8px;
-    width: 29%;
-    text-align: left;
-    color: white;
-    border: 1px solid #69a9f7;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.payment3 {
-    background: transparent;
-    padding: 5px;
-    border-radius: 8px;
-    width: 29%;
-    text-align: left;
-    color: white;
-    border: 1px solid #69a9f7;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-
-.payment1:hover {
-    border-color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
-}
-
-.payment2:hover {
-    border-color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
-}
-
-.payment3:hover {
-    border-color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.02);
-}
-
-/* FOR ONE-TIME KENEME */
-.one-time {
-    grid-column: 1 / -1;
-    background-color: white;
-    color: black;
-    border-radius: 8px;
-    padding: 20px;
-    width: 95%;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    margin-top: 40px;
-}
-
-.one-time-content {
-    display: flex;
-    align-items: center;  
-    gap: 20px;
-}
-
-.credit-card-image {
-    width: 90px;  
-    height: auto;  
-}
-
-.one-time-text h3 {
-    margin: 0;  
-    font-size: 25px; 
-}
-
-.one-time-text p {
-    margin: 0;  
-    font-size: 16px; 
-}
 
 /* PAYMENT DETAILS KENEME */
 .payment-details {
@@ -479,6 +426,8 @@ hr{
     padding: 10px 0;
     font-size: 16px;
 }
+
+
 /* FOR JS */
 .option.active {
     border-color: #101417;
